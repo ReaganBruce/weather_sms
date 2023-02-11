@@ -1,0 +1,19 @@
+{
+  "name": "weather_sms",
+  "version": "1.0.0",
+  "description": "Send Weather to my phone via Twilio SMS",
+  "main": "./source/server.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon"
+  },
+  "author": "Reagan Bruce",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "nodemon": "^2.0.20",
+    "twilio": "^4.7.2"
+  }
+}
