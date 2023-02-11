@@ -1,18 +1,16 @@
-import * as dotenv from 'dotenv'
-dotenv.config()
-import express from 'express'
+import express from "express";
 
-//twilio instance
-import { createClient } from './twilio.js'
+//File Imports
+import { createTwilioClient } from "./instances/twilio.js";
+import { getLocalWeather } from "./instances/weatherApi.js";
 
-const app = express()
+const app = express();
+app.use(express.json());
 
-app.use(express.json())
+createTwilioClient(); //Twilio Instance
+getLocalWeather(); //weatherAPI Instance
 
-createClient()
-
-
-const PORT = process.env.PORT
+const PORT = process.env.PORT;
 app.listen(PORT, () => {
-    console.log(`Application running on PORT: ${PORT}`);
-})
+  console.log(`Application running on PORT: ${PORT}`);
+});
